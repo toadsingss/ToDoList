@@ -1,10 +1,8 @@
-# To-Do List Python 📝
-
-![ToDo Screenshot](screenshot.png)
+# To-do List Python 📝
 
 ## Description
 
-Ce projet est une **To-Do List** développée en **Python**. Il permet de gérer vos tâches quotidiennes avec des fonctionnalités avancées tout en restant simple à utiliser.
+Ce projet est une **To-do List** développée en **Python**. Il permet de gérer vos tâches quotidiennes avec des fonctionnalités avancées tout en restant simple à utiliser.
 
 ---
 
@@ -32,12 +30,6 @@ cd ToDoList
 ```bash
 python todo_gui_ttk.py
 ```
-
----
-
-## Captures d'écran
-
-![ToDo Screenshot](screenshot.png)
 
 ---
 
