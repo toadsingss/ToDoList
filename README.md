@@ -1,2 +1,2 @@
 # ToDoList
-A simple To-do List made with python
+A simple To-do List shell made with python
