@@ -15,11 +15,23 @@ def show():
     else:
         for i,t in enumerate(tasks, 1):
             statut = "✅​" if t["done"] else "❌​"
-            print(f"\n{i}. {t['title']} {statut}")
+            print(f"\n{i}. [{t['category']}] {t['title']} {statut}")
+
+def showByCategory():
+    category = input("\nQuelle catégorie voulez vous afficher ? : ")
+    found = False
+    for i, t in enumerate(tasks, 1):
+        if t["category"].lower() == category.lower():
+            statut = "✅​" if t["done"] else "❌​"
+            print(f"\n{i}. [{t['category']}] {t['title']} {statut}")
+            found = True
+    if not found:
+        print("\n⚠️ Aucune tâche dans cette catégorie.")
 
 def add():
     title = input("\nQuelle est votre tâche ? : ")
-    tasks.append({"title": title, "done": False})
+    category = input("Dans quelle catégorie cette tache entre ? (exemple : Maison, Travail, Autre...) : ")
+    tasks.append({"title": title, "done": False, "category": category})
     print("✅ Tâche ajoutée !")
 
 def markAsDone():
@@ -56,11 +68,12 @@ def save():
 while True:
     print("\n<--- To-do List --->")
     print("1. Afficher les tâches")
-    print("2. Ajouter une tâche")
-    print("3. Marquer comme faite")
-    print("4. Marquer comme non-faite")
-    print("5. Supprimer une tâche")
-    print("6. Quitter")
+    print("2. Afficher les tâches par catégorie")
+    print("3. Ajouter une tâche")
+    print("4. Marquer comme faite")
+    print("5. Marquer comme non-faite")
+    print("6. Supprimer une tâche")
+    print("7. Quitter")
 
     choice = input("\nChoisissez une action : ")
 
@@ -68,18 +81,21 @@ while True:
         show()
 
     elif choice == "2":
-        add()
+        showByCategory()
 
     elif choice == "3":
-        markAsDone()
+        add()
 
     elif choice == "4":
-        remove()
+        markAsDone()
 
     elif choice == "5":
-        markAsNotDone()
+        remove()
 
     elif choice == "6":
+        markAsNotDone()
+
+    elif choice == "7":
         save()
         print("\nÀ bientôt !")
         break
